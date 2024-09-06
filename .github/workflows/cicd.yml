@@ -25,8 +25,12 @@ jobs:
 
     - name: Run lint
       run: |
-        pylint 
+        make lint 
 
     - name: Run tests
       run: |
-        pytest
+        make test
+    
+    - name: Run format
+      run: |
+        make format
