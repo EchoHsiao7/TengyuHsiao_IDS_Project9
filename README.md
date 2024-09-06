@@ -1,1 +1,2 @@
 # TengyuHsiao_IDS_project1
+[![Python CI](https://github.com/EchoHsiao7/TengyuHsiao_IDS_project1/actions/workflows/cicd.yml/badge.svg)](https://github.com/EchoHsiao7/TengyuHsiao_IDS_project1/actions/workflows/cicd.yml)
