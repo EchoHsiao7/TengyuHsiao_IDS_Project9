@@ -8,7 +8,6 @@ The csv file I am using is Top 1500 games on steam by revenue 09-09-2024(https:/
 
 I am curious about price of the game and the revenue, so I produce some statistics about these two columns, here are the results:
 Price:
- 17.519513333333332
 Mean:
  17.519513333333332
 
@@ -18,8 +17,7 @@ Median:
 Standard Deviation:
  12.646611586491009
 
- revenue:
- 2632381.9826861774
+Revenue:
 Mean:
  2632381.9826861774
 

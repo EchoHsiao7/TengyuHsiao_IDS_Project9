@@ -12,7 +12,7 @@ if __name__ == "__main__":
     mean_values = df["price"].mean(numeric_only=True)
     median_values = df["price"].median(numeric_only=True)
     std_values = df["price"].std(numeric_only=True)
-
+    print("Price:\n")
     print("Mean:\n", mean_values)
     print("\nMedian:\n", median_values)
     print("\nStandard Deviation:\n", std_values)
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     median_values = df["revenue"].median(numeric_only=True)
     std_values = df["revenue"].std(numeric_only=True)
 
-    print("revenue:\n", mean_values)
+    print("revenue:\n")
     print("Mean:\n", mean_values)
     print("\nMedian:\n", median_values)
     print("\nStandard Deviation:\n", std_values)
