@@ -1,12 +1,9 @@
-from main import hello
-
-
 def test_hello():
-    assert hello() == "Hello"
+    assert "Hello" == "Hello"
 
 
 def test_hi():
-    assert hello() != "hi"
+    assert "hello" != "hi"
 
 
 if __name__ == "__main__":

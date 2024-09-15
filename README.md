@@ -1,29 +1,41 @@
-# TengyuHsiao_IDS_project1
+# TengyuHsiao_IDS_project2
 [![Python CI](https://github.com/EchoHsiao7/TengyuHsiao_IDS_project1/actions/workflows/cicd.yml/badge.svg)](https://github.com/EchoHsiao7/TengyuHsiao_IDS_project1/actions/workflows/cicd.yml)
 
 
-- ``.devcontainer`` includes a Dockerfile and devcontainer.json.
-                The 'Dockerfile' within this folder specifies how the container should be built, and other settings in this directory may control development environment configurations.
+This Project reads from a csv file and produces some statistics and visualization from it.
 
-- ``workflows`` includes GitHub Actions, which contain configuration files for setting up automated build, test, and deployment pipelines for your project.
+The csv file I am using is Top 1500 games on steam by revenue 09-09-2024(https://www.kaggle.com/datasets/alicemtopcu/top-1500-games-on-steam-by-revenue-09-09-2024?resource=download)
 
-- ``Makefile`` is a configuration file used in Unix-based systems for automating tasks and building software. It contains instructions and dependencies for compiling code, running tests, and other development tasks.
+I am curious about price of the game and the revenue, so I produce some statistics about these two columns, here are the results:
+Price:
+ 17.519513333333332
+Mean:
+ 17.519513333333332
 
-- ``README.md`` is the instruction file for the readers.
+Median:
+ 14.99
 
-- ``main.py`` is a Python file.
+Standard Deviation:
+ 12.646611586491009
 
-- ``requirements.txt`` is to specify the dependencies (libraries and packages) required to run the project.
+ revenue:
+ 2632381.9826861774
+Mean:
+ 2632381.9826861774
 
-- ``test_main.py`` is a test file for main.py that can successfully run in IDEs.
+Median:
+ 109053.0
 
-- ``img`` saves the running results.
+Standard Deviation:
+ 27810239.622256387
 
-I use Github Actions to run the Makefile as follows: `make setup`, `make test`, `make format`, `make lint`.The following pictures show the pass results:
+This is a histogram of the price:
+
 ![alt text](img/image.png)
 
-![alt text](img/image-1.png)
+The histogram is right-skewed, meaning that most of the data is concentrated on the lower end of the price scale. The mode is around 10-20, suggesting that most items are priced within this range
 
-![alt text](img/image-2.png)
+I am also curious about the relationship between price and revenue, so I plot a scatterplot:
+![alt text](img/image2.png)
 
-![alt text](img/image-3.png)
+There appears to be a positive correlation between price and revenue for certain items, particularly those few in the higher price ranges that have managed to generate substantial revenue. However, the correlation is not strong across all price ranges as many high-priced items do not generate proportionately higher revenues.
