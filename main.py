@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("/content/Steam_2024_bestRevenue_1500.csv")
+    df = pd.read_csv("Steam_2024_bestRevenue_1500.csv")
     mean_values = df["price"].mean(numeric_only=True)
     median_values = df["price"].median(numeric_only=True)
     std_values = df["price"].std(numeric_only=True)
