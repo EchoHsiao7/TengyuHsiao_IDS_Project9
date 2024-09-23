@@ -1,44 +1,43 @@
-"""
-This module reads a csv file and produce some useful statistics from it.
-"""
-
-
-import pandas as pd
 import matplotlib.pyplot as plt
+import polars as pl
+
+
+def read_data(file):
+    df = pl.read_csv(file)
+    return df
+
+
+def generate_summary_statistics(dataframe, col_name):
+    # Mean
+    mean_value = dataframe[col_name].mean()
+    # Median
+    median_value = dataframe[col_name].median()
+    # Standard deviation
+    std_value = dataframe[col_name].std()
+
+    print(f"Summary Statistics for {col_name}:")
+    print(f"Mean: {mean_value}")
+    print(f"Median: {median_value}")
+    print(f"Standard Deviation: {std_value}")
+
+    return mean_value, median_value, std_value
+
+
+def create_visualization(dataframe, col_name):
+    data = dataframe[col_name].to_list()
+
+    plt.hist(data, bins=20, alpha=0.7, color="blue")
+    plt.title(f"Distribution of {col_name}")
+    plt.xlabel(col_name)
+    plt.ylabel("Frequency")
+    plt.savefig("img/histogram.png")
+    print("Histogram saved as 'histogram.png'")
+    plt.show()
 
 
 if __name__ == "__main__":
-    df = pd.read_csv("Steam_2024_bestRevenue_1500.csv")
-    mean_values = df["price"].mean(numeric_only=True)
-    median_values = df["price"].median(numeric_only=True)
-    std_values = df["price"].std(numeric_only=True)
-    print("Price:\n")
-    print("Mean:\n", mean_values)
-    print("\nMedian:\n", median_values)
-    print("\nStandard Deviation:\n", std_values)
-
-    plt.hist(df["price"].dropna(), bins=20, edgecolor="k")
-    plt.title("Histogram of price")
-    plt.xlabel("price")
-    plt.ylabel("Frequency")
-    plt.savefig("histogram.png")
-    plt.show()
-
-    mean_values = df["revenue"].mean(numeric_only=True)
-    median_values = df["revenue"].median(numeric_only=True)
-    std_values = df["revenue"].std(numeric_only=True)
-
-    print("revenue:\n")
-    print("Mean:\n", mean_values)
-    print("\nMedian:\n", median_values)
-    print("\nStandard Deviation:\n", std_values)
-
-    plt.scatter(
-        df["price"], df["revenue"], alpha=0.5, edgecolors="w", label="Price vs Revenue"
-    )
-    plt.title("Scatter Plot of Price vs Revenue")
-    plt.xlabel("Price")
-    plt.ylabel("Revenue")
-    plt.legend()
-    plt.grid(True)
-    plt.show()
+    input_file = "Steam_2024_bestRevenue_1500.csv"
+    df_data = read_data(input_file)
+    colname = "price"  # Replace with the actual column name
+    mean, median, std = generate_summary_statistics(df_data, colname)
+    create_visualization(df_data, colname)
