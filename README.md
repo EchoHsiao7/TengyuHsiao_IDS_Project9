@@ -1,8 +1,8 @@
-# TengyuHsiao_IDS_project3
+# TengyuHsiao_IDS_project9
 [![Python CI](https://github.com/EchoHsiao7/TengyuHsiao_IDS_project3/actions/workflows/cicd.yml/badge.svg)](https://github.com/EchoHsiao7/TengyuHsiao_IDS_project3/actions/workflows/cicd.yml)
 
 
-This Project reads from a csv file and produces some statistics and visualization from it.
+This Project reads from a csv file and produces some statistics and visualization from it using Google Colab Nootbook.
 
 The csv file I am using is Top 1500 games on steam by revenue 09-09-2024(https://www.kaggle.com/datasets/alicemtopcu/top-1500-games-on-steam-by-revenue-09-09-2024?resource=download)
 
